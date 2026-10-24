@@ -1,1 +1,0 @@
-Zukko AI — Özbekiston maktab darsliklari va test standartlariga toʻla moslashtirilgan, öquvçilarga interaktiv darslik mutolaasi, sunʼiy intellekt repetitori, bilimni mustahkamlovçi öyinlar hamda platformamiz oylik musobaqalarini taqdim etuvçi zamonaviy intellektual ekotizimdir.

@@ -1,0 +1,173 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Foydalanuvchi profili, hisob ma'lumotlari va bilim ko'rsatkichlari",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Foydalanuvchi unikal identifikatori"
+        },
+        "username": {
+          "type": "string",
+          "description": "Foydalanuvchi logini",
+          "minLength": 3,
+          "maxLength": 50
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Foydalanuvchi ismi va familiyasi",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Foydalanuvchi elektron pochtasi",
+          "maxLength": 120
+        },
+        "avatar": {
+          "type": "string",
+          "description": "Foydalanuvchi avatar belgisi",
+          "maxLength": 30
+        },
+        "passwordHash": {
+          "type": "string",
+          "description": "Xavfsiz saqlangan parol izi",
+          "maxLength": 128
+        },
+        "role": {
+          "type": "string",
+          "description": "Foydalanuvchi roli",
+          "enum": ["student", "admin", "teacher"]
+        },
+        "xp": {
+          "type": "number",
+          "description": "To'plangan umumiy ball (tajriba)"
+        },
+        "level": {
+          "type": "number",
+          "description": "O'quvchi darajasi"
+        },
+        "streakDays": {
+          "type": "number",
+          "description": "Uzluksiz kunlar soni"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Hisob yaratilgan vaqt"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "So'nggi yangilangan vaqt"
+        }
+      },
+      "required": ["userId", "username", "displayName", "createdAt"]
+    },
+    "TestResult": {
+      "title": "TestResult",
+      "description": "O'quvchi tomonidan yechilgan testlar natijasi",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Natija identifikatori"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Test yechgan o'quvchi IDsi"
+        },
+        "userName": {
+          "type": "string",
+          "description": "O'quvchi ismi",
+          "maxLength": 100
+        },
+        "subject": {
+          "type": "string",
+          "description": "Fan nomi",
+          "maxLength": 100
+        },
+        "topic": {
+          "type": "string",
+          "description": "Mavzu nomi",
+          "maxLength": 150
+        },
+        "score": {
+          "type": "number",
+          "description": "To'g'ri javoblar soni"
+        },
+        "total": {
+          "type": "number",
+          "description": "Jami savollar soni"
+        },
+        "completedAt": {
+          "type": "string",
+          "description": "Test yakunlangan vaqt"
+        }
+      },
+      "required": ["id", "userId", "subject", "score", "total", "completedAt"]
+    },
+    "CompetitionEntry": {
+      "title": "CompetitionEntry",
+      "description": "Oylik musobaqa natijasi",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Musobaqa natijasi IDsi"
+        },
+        "userId": {
+          "type": "string",
+          "description": "Ishtirokchi IDsi"
+        },
+        "userName": {
+          "type": "string",
+          "description": "Ishtirokchi ismi",
+          "maxLength": 100
+        },
+        "subject": {
+          "type": "string",
+          "description": "Musobaqa fani",
+          "maxLength": 100
+        },
+        "score": {
+          "type": "number",
+          "description": "To'plangan ball"
+        },
+        "totalQuestions": {
+          "type": "number",
+          "description": "Jami savollar"
+        },
+        "timeSpentSeconds": {
+          "type": "number",
+          "description": "Sarflangan vaqt (soniya)"
+        },
+        "completedAt": {
+          "type": "string",
+          "description": "Yakunlangan vaqt"
+        }
+      },
+      "required": ["id", "userId", "score", "totalQuestions", "timeSpentSeconds", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "User"
+      },
+      "description": "Foydalanuvchilar hisoblari va profillari"
+    },
+    "/testResults/{resultId}": {
+      "schema": {
+        "$ref": "TestResult"
+      },
+      "description": "O'quvchilar yechgan test natijalari"
+    },
+    "/competitionEntries/{entryId}": {
+      "schema": {
+        "$ref": "CompetitionEntry"
+      },
+      "description": "Oylik musobaqa ishtirokchilari natijalari"
+    }
+  }
+}

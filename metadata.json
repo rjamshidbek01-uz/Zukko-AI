@@ -1,0 +1,8 @@
+{
+  "name": "Remix Zukko AI - O\u0027quv va Test Platformasi",
+  "description": "Darsliklar asosidagi Sun\u0027iy Intellektual konspektlar, interaktiv testlar, AI repetitor va 2 soatlik sinov imtihon tizimi.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "summary":  "PDF fayllarni CORS va CSP cheklovlarisiz yuklash uchun fetch orqali ArrayBuffer qabul qilib, Blob URL yaratish va yuklanish foizi bilan render qilish rejasi.",
+  "updatedAt":  "2026-10-23T08:32:40.094198649Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}
