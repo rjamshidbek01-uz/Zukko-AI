@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { StudentDashboard } from './components/StudentDashboard';
 import { SummaryModeView } from './components/SummaryModeView';
@@ -267,6 +268,9 @@ export default function App() {
         onClose={() => setIsSupabaseModalOpen(false)}
         onConfigChanged={refreshData}
       />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
